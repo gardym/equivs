@@ -34,7 +34,7 @@ Installing dummy packages
 
 # Examples
 
-    # install a dummy package named 'sun-java6-hre'
+    # install a dummy package named 'sun-java6-jre'
     equivs_install 'sun-java6-jre'
 
 Usage
