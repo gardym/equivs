@@ -1,0 +1,33 @@
+{
+  "name": "equivs",
+  "description": "Installs equivs and provides a recipe to set up equivs.",
+  "long_description": "",
+  "maintainer": "Mike Gardiner",
+  "maintainer_email": "conversationing@gmail.com",
+  "license": "Apache 2.0",
+  "platforms": {
+    "ubuntu": ">= 0.0.0",
+    "debian": ">= 0.0.0"
+  },
+  "dependencies": {
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+    "equivs": "Installs equivs",
+    "equivs::system_install": "Installs equivs"
+  },
+  "version": "0.0.1"
+}
