@@ -3,12 +3,12 @@ require 'spec_helper'
 describe 'equivs::default' do
   context 'When all attributes are default, on an unspecified platform' do
     let(:chef_run) do
-      runner = ChefSpec::ServerRunner.new
+      runner = ChefSpec::ServerRunner.new(platform: 'ubuntu', version: '14.04')
       runner.converge(described_recipe)
     end
 
     it 'installs successfully' do
-      expect(chef_run).to install_apt_package('equivs')
+      expect(chef_run).to install_package('equivs')
     end
 
     it 'converges successfully' do

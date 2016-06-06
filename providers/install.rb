@@ -14,16 +14,16 @@ action :install do
 
     # generate the control file from the cookbook file
     template control_file do
-      cookbook "equivs"
-      source "equiv-control-template.erb"
-      variables(
+      cookbook 'equivs'
+      source 'equiv-control-template.erb'
+      variables({
         :package_name => package_name
-      )
+      })
       mode 0644
     end
 
     # call equivs-build on the control file
-    execute "equivs-build" do
+    execute 'equivs-build' do
       cwd tmp_dir
       command "equivs-build #{package_name}"
     end
