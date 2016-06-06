@@ -16,9 +16,9 @@ action :install do
     template control_file do
       cookbook 'equivs'
       source 'equiv-control-template.erb'
-      variables({
-        :package_name => package_name
-      })
+      variables(
+        package_name: package_name
+      )
       mode 0644
     end
 
