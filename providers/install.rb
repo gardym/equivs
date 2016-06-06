@@ -1,8 +1,11 @@
+use_inline_resources
+
 def package_installed?(package_name)
   dpkg_l = Chef::ShellOut.new("dpkg -l | grep #{package_name}")
   dpkg_l.run_command
   (dpkg_l.exitstatus == 0)
 end
+
 
 action :install do
   package_name = new_resource.package_name
@@ -33,5 +36,6 @@ action :install do
       source deb_file
       action :install
     end
+    new_resource.updated_by_last_action(true)
   end
 end

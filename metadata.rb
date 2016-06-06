@@ -5,6 +5,9 @@ license           'Apache 2.0'
 description       'Installs equivs and provides a recipe to set up equivs.'
 version           '0.0.3'
 
+source_url "https://github.com/gardym/#{name}"
+issues_url "https://github.com/gardym/#{name}/issues"
+
 depends 'apt'
 
 recipe 'equivs', 'Installs equivs'
