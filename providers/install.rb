@@ -6,7 +6,6 @@ def package_installed?(package_name)
   (dpkg_l.exitstatus == 0)
 end
 
-
 action :install do
   package_name = new_resource.package_name
 
