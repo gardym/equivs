@@ -1,0 +1,14 @@
+language: ruby
+rvm:
+  - 2.0.0
+  - 2.1.6
+  - 2.2.2
+
+cache:
+  - apt
+  - bundler
+
+script:
+  - bundle exec rubocop
+  - bundle exec foodcritic --epic-fail any ./
+  - bundle exec rspec
