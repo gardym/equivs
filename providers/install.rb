@@ -21,7 +21,7 @@ action :install do
       variables(
         package_name: package_name
       )
-      mode 0644
+      mode '0644'
     end
 
     # call equivs-build on the control file
