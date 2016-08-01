@@ -3,7 +3,7 @@ maintainer        'Asher Yanich'
 maintainer_email  'asher.yanich@gmail.com'
 license           'Apache 2.0'
 description       'Installs equivs and provides a recipe to set up equivs.'
-version           '0.0.3'
+version           '0.1.1'
 
 source_url "https://github.com/ayanich/#{name}"
 issues_url "https://github.com/ayanich/#{name}/issues"

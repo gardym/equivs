@@ -3,23 +3,25 @@ use_inline_resources
 def package_installed?(package_name)
   dpkg_l = Chef::ShellOut.new("dpkg -l | grep #{package_name}")
   dpkg_l.run_command
-  (dpkg_l.exitstatus == 0)
+  dpkg_l.exitstatus.zero?
 end
 
 action :install do
   package_name = new_resource.package_name
+  version = new_resource.version
 
   unless package_installed?(package_name)
     tmp_dir = Chef::Config[:file_cache_path]
     control_file = "#{tmp_dir}/#{package_name}"
-    deb_file = "#{control_file}_1.0_all.deb"
+    deb_file = "#{control_file}_#{version}_all.deb"
 
     # generate the control file from the cookbook file
     template control_file do
       cookbook 'equivs'
       source 'equiv-control-template.erb'
       variables(
-        package_name: package_name
+        package_name: package_name,
+        version: version
       )
       mode '0644'
     end
